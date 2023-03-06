@@ -127,3 +127,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+ai-content-starting-template-main/config.py
+.Ds_Store
