@@ -3,10 +3,10 @@ import openai
 import config 
 openai.api_key = config.OPENAI_API_KEY
 
-def productDescription(query):
+def openAIQuery(query):
     response = openai.Completion.create(
         model="text-davinci-003",
-        prompt="Generate a detailed description for: {}".format(query),
+        prompt=query,
         temperature=0.7,
         max_tokens=214,
         top_p=1,
@@ -19,7 +19,7 @@ def productDescription(query):
             answer = "No answer found"
     else:
         answer = "No answer found"
-    print(answer)
+    return answer
 query = "Apple Iphone 12"
-productDescription(query)
+openAIQuery(query)
 

@@ -21,11 +21,10 @@ def index():
 def productDescription():
 
     if request.method == 'POST':
-        query = request.form['productDescription']
-        aicontent.productDescription(query)
-
-        prompt = 'AI Suggestions for {} are:'.format(query)
-        openAIAnswer = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        submission = request.form['productDescription']
+        query = "Generate a detailed product description for: {}".format(submission),
+        openAIAnswer = aicontent.openAIQuery(query)
+        prompt = 'AI Suggestions for {} are:'.format(submission)
 
     return render_template('product-description.html', **locals())
 
@@ -35,11 +34,10 @@ def productDescription():
 def jobDescription():
 
     if request.method == 'POST':
-        query = request.form['jobDescription']
-        print(query)
-
-        prompt = 'AI Suggestions for {} are:'.format(query)
-        openAIAnswer = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        submission = request.form['jobDescription']
+        query = "Generate a detailed job description for: {}".format(submission),
+        openAIAnswer = aicontent.openAIQuery(query)
+        prompt = 'AI Suggestions for {} are:'.format(submission)
 
     return render_template('job-description.html', **locals())
 
