@@ -22,4 +22,3 @@ def openAIQuery(query):
     return answer
 query = "Apple Iphone 12"
 openAIQuery(query)
-
